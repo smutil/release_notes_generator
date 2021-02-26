@@ -1,4 +1,4 @@
-# Release Metrics Generator ![example workflow](https://github.com/smutil/release_notes_generator/actions/workflows/build-actions.yml/badge.svg)
+# Release Metrics Generator ![example workflow](https://github.com/smutil/release_notes_generator/actions/workflows/build-actions.yml/badge.svg) ![example workflow](https://github.com/smutil/release_notes_generator/actions/workflows/release-actions.yml/badge.svg)
 
 CLI to generate release notes based on tag and git commit log in html and json format with below details.
 1. Release Name
