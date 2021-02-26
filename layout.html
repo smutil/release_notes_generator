@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Release Notes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		</br>
+		<h2>Release Notes</h2>
+	</br>
+		<div class="panel panel-default">
+			<div class="panel-heading"></div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-sm-3">Application : </div>
+					<div class="col-sm-4">{{.Application}}</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">Release Version : </div>
+					<div class="col-sm-4">{{.TagName}}</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">Release Date : </div>
+					<div class="col-sm-4">{{.ReleaseDate}}</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">Author : </div>
+					<div class="col-sm-4">{{.Author}}</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">Change Volume : </div>
+					<div class="col-sm-4">{{.ChangeVolume}}</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">Lead Time : </div>
+					<div class="col-sm-4">{{.LeadTime}} minutes</div>
+				</div>
+
+			</div>
+		</div>
+	</br>
+		<table class="table table-hover table-bordered">
+		  <thead class="thead-dark">
+		    <tr>
+		      <th scope="col">Commit ID</th>
+			  <th scope="col">Message</th>
+			  <th scope="col">Author</th>
+			  <th scope="col">Leadtime (minutes)</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			{{ range $v := .Changes }}
+		    <tr>
+				<td>{{.CommitId}}</td>
+				<td>{{.Message}}</td>
+				<td>{{.Author}}</td>
+				<td>{{printf "%.1f" .Leadtime}}</td>
+		    </tr>
+			{{ end }}
+		  </tbody>
+		</table>
+	</div>
+</body>
+</html>
